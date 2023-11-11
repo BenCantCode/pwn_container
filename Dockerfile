@@ -53,5 +53,6 @@ RUN echo 'export PATH="$PATH:/home/user/.r2env/bin"' >> ~/.bashrc
 ADD tmux.conf /home/user/.tmux.conf
 RUN echo "alias pwninit='pwninit --template-path ~/template.py'" >> ~/.bashrc
 RUN echo '[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}' >> ~/.bashrc
+RUN echo 'export LC_CTYPE=C.UTF-8' >> ~/.bashrc
 ADD pwn.conf /home/user/.pwn.conf
 WORKDIR /pwn
